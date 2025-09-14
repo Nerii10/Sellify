@@ -1,0 +1,127 @@
+.panel-money-wrapper {
+  box-sizing: border-box;
+  font-size: 25px;
+  border-bottom: var(--DefaultBorder);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+.panel-money-input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  flex-shrink: 0;
+  height: 60px;
+  border: 1px rgba(0, 0, 0, 0.202) solid;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.panel-money-input a {
+  font-size: 22px;
+  color: var(--InteractionColor);
+}
+
+@media only screen and (max-width: 768px) {
+  .panel-money-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .panel-money-input {
+    font-size: 20px;
+  }
+
+  .panel-money-input a {
+    font-size: 16px;
+  }
+}
+
+.stat-chart-wrapper {
+  margin: 10px;
+  border: var(--DefaultBorder);
+  height: 300px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-chart-top {
+  background-color: rgb(214, 214, 214);
+  padding: 10px;
+  border-bottom: var(--DefaultBorder);
+}
+
+.stat-chart-bottom-wrapper {
+  flex: 1;
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+  display: flex;
+  padding: 20px 20px;
+  box-sizing: border-box;
+}
+
+.stat-chart-bottom {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.stat-chart-input {
+  width: 50px;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.stat-chart-input.profit {
+  background-color: var(--InteractionColor);
+}
+
+.stat-chart-input-amount {
+  color: black;
+  position: absolute;
+  top: -20px;
+  font-size: 15px;
+}
+
+.stat-chart-input-amount.profit {
+  color: var(--InteractionColor);
+}
+
+.stat-chart-input-month {
+  color: black;
+  position: absolute;
+  bottom: -25px;
+  font-size: 15px;
+}
+
+.stat-chart-inputs-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  flex-direction: row;
+  gap: 5px;
+  position: relative;
+}
+
+.stat-chart-inputs-wrapper::before {
+  position: absolute;
+  content: "";
+  width: 110%;
+  height: 5px;
+  background-color: rgb(169, 152, 231);
+  bottom: -5px;
+}
