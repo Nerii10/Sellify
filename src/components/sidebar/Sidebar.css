@@ -1,0 +1,100 @@
+.sidebar-wrapper {
+  height: 100%;
+
+  color: rgb(26, 26, 26);
+  background-color: var(--SecondColor);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-right: var(--DefaultBorder);
+}
+
+.sidebar-wrapper.open {
+  padding: 10px;
+  padding-right: 30px;
+  width: fit-content;
+}
+
+.sidebar-input {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 10px;
+  color: rgb(25, 25, 25);
+  transition: 0.1s ease-out;
+  cursor: pointer;
+}
+
+.sidebar-input.active {
+  background-color: rgba(255, 255, 255, 0.56);
+  border: 1px rgba(0, 0, 0, 0.17) solid;
+  color: var(--InteractionColor);
+
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.055);
+}
+
+.sidebar-input.inactive {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px rgba(0, 0, 0, 0) solid;
+}
+
+/* MOBILE */
+
+.mobile-sidebar-wrapper {
+  position: fixed;
+  height: 100%;
+
+  color: rgb(26, 26, 26);
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.6, 0, 0.1, 1);
+
+  z-index: 2;
+}
+
+.mobile-sidebar-wrapper.open {
+  padding: 10px;
+  padding-right: 30px;
+  clip-path: inset(0 0% 0 0);
+}
+
+.mobile-sidebar-wrapper.closed {
+  padding: 10px 0px;
+  padding-right: 0px;
+  clip-path: inset(0 100% 0 0);
+}
+
+.mobile-sidebar-toggle {
+  position: fixed;
+  background-color: rgb(49, 49, 49);
+  color: white;
+  bottom: 10%;
+
+  width: 60px;
+  height: 50px;
+  z-index: 3;
+
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  pointer-events: auto;
+}

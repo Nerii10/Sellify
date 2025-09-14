@@ -1,0 +1,181 @@
+.sales-header-search-wrapper {
+  position: relative;
+  width: 300px;
+  height: 35px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.sales-header-search-input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: 20px;
+  border-radius: 10px;
+  border: var(--DefaultBorder);
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.sales-header-serach-label {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  color: rgb(143, 143, 143);
+  font-size: 15px;
+  margin-left: 10px;
+  pointer-events: none;
+}
+
+/* AddItem */
+
+.add-item-wrapper {
+  margin: 0;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(151, 151, 151, 0.679);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+}
+
+.add-item-receipt {
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  margin: 10% 5%;
+  width: 90%;
+  max-width: 1000px;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.add-item-input-text {
+  font-size: 17px;
+  width: 150px;
+  padding: 7px;
+  box-sizing: border-box;
+  border: var(--DefaultBorder);
+  border-radius: 10px;
+}
+
+.add-item-receipt-top {
+  position: relative;
+  width: 100%;
+  border-bottom: var(--DefaultBorder);
+  padding: 10px 10px;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-item-receipt-mid {
+  padding: 10px 0px;
+  border-bottom: var(--DefaultBorder);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+.add-item-receipt-bottom {
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.add-item-receipt-bottom-button {
+  height: fit-content;
+  border: var(--DefaultBorder);
+  border-radius: 10px;
+  background-color: white;
+  font-size: 18px;
+  box-sizing: border-box;
+  padding: 7px 15px;
+  display: flex;
+  justify-content: center;
+  color: black;
+  align-items: center;
+}
+
+.add-item-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  border-bottom: var(--DefaultBorder);
+  padding: 20px 15px;
+  gap: 5px;
+  box-sizing: border-box;
+}
+
+.remove-button {
+  width: 35px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(83, 83, 83);
+  color: white;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.add-item-input:last-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0px black solid;
+  padding: 20px 15px;
+  box-sizing: border-box;
+}
+
+.add-item-input-button {
+  width: 25px;
+  height: 25px;
+  aspect-ratio: 1/1;
+  padding: 3px;
+  border: var(--DefaultBorder);
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-item-closebutton {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(207, 22, 22);
+  position: absolute;
+  content: " ";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 3px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  margin: -15px;
+}
+
+.add-item-closebutton.disabled {
+  background-color: rgb(141, 13, 13);
+  cursor: wait;
+}

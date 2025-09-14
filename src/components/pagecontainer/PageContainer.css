@@ -1,0 +1,7 @@
+.PageContainer {
+  width: 100%;
+  background-color: var(--SecondColor);
+  border-radius: 20px;
+  border: var(--DefaultBorder);
+  overflow: hidden;
+}
