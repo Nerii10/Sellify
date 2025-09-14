@@ -20,6 +20,15 @@
   gap: 10px;
 }
 
+.sales-header-text{
+
+}
+@media only screen and (max-width: 900px) {
+  .sales-header-text{
+    font-size: 17px;
+  }
+}
+
 /* AddSale */
 .add-sale-wrapper {
   margin: 0;

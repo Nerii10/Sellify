@@ -17,7 +17,7 @@ export default function Sales() {
       <AddSale open={open} setOpen={setOpen} />
 
       <div className="sales-header">
-        Ostatnie 100 sprzedaży
+        <a className="sales-header-text">Ostatnie sprzedaże</a>
         <button
           className="button-normal"
           onClick={() => {

@@ -21,6 +21,7 @@ body {
   font-weight: normal;
   border-radius: 10px;
   font-size: 20px;
+  white-space: nowrap;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -28,4 +29,10 @@ body {
 .button-normal.disabled{
   background-color: rgb(218, 218, 218);
   cursor:wait;
+}
+
+@media only screen and (max-width: 900px) {
+  .button-normal {
+    font-size: 15px;
+  }
 }
