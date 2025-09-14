@@ -31,7 +31,7 @@ body {
   cursor:wait;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 768px) {
   .button-normal {
     font-size: 15px;
   }
