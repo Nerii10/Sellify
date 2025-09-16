@@ -71,6 +71,7 @@ export default function Items() {
         data={filteredItems}
       />
       <br></br>
+      <br></br>
     </section>
   );
 }

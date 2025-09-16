@@ -1,6 +1,26 @@
 import { X } from "lucide-react";
 import "./Table.css";
 
+function TableFillers({ count, headers }) {
+  const rows = [];
+  for (let i = 0; i < count; i++) {
+    rows.push(
+      <tr className="table-body-row" key={i}>
+        {headers.map((header, index) => (
+          <td
+            className="table-body-row-input"
+            style={{ color: "transparent" }}
+            key={index}
+          >
+            0
+          </td>
+        ))}
+      </tr>
+    );
+  }
+  return <>{rows}</>;
+}
+
 export default function Table({ headers, body, data, remove }) {
   return (
     <div className="table-wrapper">
@@ -69,42 +89,13 @@ export default function Table({ headers, body, data, remove }) {
                 );
               })}
 
-            {data.length <= 10 &&
-              Array(5)
-                .fill(0)
-                .map((item) => {
-                  return (
-                    <tr className="table-body-row">
-                      {headers.map((header) => (
-                        <td
-                          className="table-body-row-input"
-                          style={{ color: "transparent" }}
-                        >
-                          -
-                        </td>
-                      ))}
-                    </tr>
-                  );
-                })}
+            {data.length <= 10 && (
+              <TableFillers headers={headers} count={10 - data.length} />
+            )}
           </tbody>
         ) : (
           <tbody className="table-body">
-            {Array(10)
-              .fill(0)
-              .map((item) => {
-                return (
-                  <tr className="table-body-row">
-                    {headers.map((header) => (
-                      <td
-                        className="table-body-row-input"
-                        style={{ color: "transparent" }}
-                      >
-                        -
-                      </td>
-                    ))}
-                  </tr>
-                );
-              })}
+            <TableFillers headers={headers} count={10} />
           </tbody>
         )}
       </table>

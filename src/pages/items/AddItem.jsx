@@ -11,9 +11,9 @@ export default function AddItem({ open, setOpen }) {
   ]);
 
   useEffect(() => {
-    if (!loading && currentItems.length != 1) {
+    if (!loading) {
       setOpen(false);
-      setCurrentItems([]);
+      setCurrentItems([{ Code: "", Name: "", BuyPrice: "", SellPrice: "" }]);
     }
   }, [loading]);
 
