@@ -20,38 +20,20 @@ export function MobileSidebar({ currentPage, changePage }) {
               key={index}
               className={
                 currentPage == data.text
-                  ? "sidebar-input active"
-                  : "sidebar-input inactive"
+                  ? "sidebar-mobile-input active"
+                  : "sidebar-mobile-input inactive"
               }
               onClick={() => {
                 changePage(data.text);
-                setOpen(false)
+                setOpen(false);
               }}
             >
-              {data.icon}
-              {data.text}
+              <div className="sidebar-mobile-input-icon">{data.icon}</div>
+              <div className="sidebar-mobile-input-label">{data.text}</div>
             </div>
           );
         })}
       </motion.div>
-
-      <div
-        className="mobile-sidebar-toggle"
-        onClick={() => {
-          setOpen(!open);
-        }}
-      >
-        <motion.div
-          animate={open ? { rotate: 180 } : { rotate: 0 }}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <ChevronRight />
-        </motion.div>
-      </div>
     </>
   );
 }
@@ -88,8 +70,8 @@ export default function Sidebar() {
   const sidebarProps = { currentPage, changePage };
 
   return windowWidth > windowMobileWidth ? (
-    <DesktopSidebar {...sidebarProps}/>
+    <DesktopSidebar {...sidebarProps} />
   ) : (
-    <MobileSidebar {...sidebarProps}/>
+    <MobileSidebar {...sidebarProps} />
   );
 }

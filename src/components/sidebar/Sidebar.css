@@ -55,47 +55,73 @@
   box-sizing: border-box;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
 
   width: 100%;
+  height: fit-content;
+  bottom: 0;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.6, 0, 0.1, 1);
 
   z-index: 2;
-}
 
-.mobile-sidebar-wrapper.open {
   padding: 10px;
   padding-right: 30px;
   clip-path: inset(0 0% 0 0);
 }
 
-.mobile-sidebar-wrapper.closed {
-  padding: 10px 0px;
-  padding-right: 0px;
-  clip-path: inset(0 100% 0 0);
+.sidebar-mobile-input {
+  width: 100%;
+  padding: 10px;
+  height: 40px;
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+  color: rgb(25, 25, 25);
+  transition: 0.1s ease-out;
+  cursor: pointer;
 }
 
-.mobile-sidebar-toggle {
-  position: fixed;
-  background-color: rgb(49, 49, 49);
-  color: white;
-  bottom: 10%;
-  left: 0;
+.sidebar-mobile-input.active {
+  background-color: rgba(255, 255, 255, 0.56);
+  border: 1px rgba(0, 0, 0, 0.17) solid;
+  color: var(--InteractionColor);
+  font-size: 15px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.055);
+}
 
-  width: 60px;
-  height: 50px;
-  z-index: 3;
+.sidebar-mobile-input.inactive {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px rgba(0, 0, 0, 0) solid;
+  font-size: 15px;
+}
 
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border: none;
+.sidebar-mobile-input-label {
+  transition: 0.5s ease;
+}
 
+.sidebar-mobile-input.active .sidebar-mobile-input-label {
+  font-size: 15px;
+  position: absolute;
+  bottom: 5px;
+}
+
+.sidebar-mobile-input.inactive .sidebar-mobile-input-label {
+  font-size: 15px;
+  opacity: 0;
+  position: absolute;
+  bottom: 5px;
+
+}
+
+.sidebar-mobile-input-icon {
+  font-size: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  cursor: pointer;
-  pointer-events: auto;
 }
